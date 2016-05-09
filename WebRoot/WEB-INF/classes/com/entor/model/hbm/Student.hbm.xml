@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.entor.model">
+	<class name="Student" table="student">
+		<id name="id" column="id">
+			<generator class="native"/>
+		</id>
+		
+		<property name="studentNumber" column="studentNumber" length="20" unique="true"  />
+		<property name="studentname" column="studentname" length="20"  />
+		<property name="sex" column="sex" length="10"/>
+		<property name="studentpassword" column="studentpassword" length="20" />
+		<property name="registerdate" column="registerdate" length="20"/>	
+			
+		<many-to-one name="myClass" column="myClass_id"></many-to-one> 	
+			
+		
+	</class>
+</hibernate-mapping>

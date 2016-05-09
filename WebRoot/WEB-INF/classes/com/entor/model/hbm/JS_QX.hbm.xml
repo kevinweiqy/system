@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.entor.model">
+	<class name="JS_QX" table="JS_QX">
+	  
+		<composite-id>
+			<key-many-to-one name="js_xx" column="jsxx_id"></key-many-to-one>
+			<key-many-to-one name="qx_info" column="qxInfo_id"></key-many-to-one>
+		</composite-id>
+	
+	</class>
+</hibernate-mapping>

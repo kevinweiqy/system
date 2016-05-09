@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.entor.model">
+	<class name="JS_XX" table="JS_XX">
+	    <cache usage="read-write"/>
+		<id name="id" column="id">
+<!--	配置主键的生成策略，native自增长-->
+			<generator class="native"/>
+		</id>
+		<property name="js_no" column="js_no" length="30" unique="true" not-null="true" />
+		<property name="js_name" column="js_name" length="30" not-null="true" />
+		<property name="js_detail" column="js_detail" length="10" />
+		<property name="js_status" column="js_status" length="2"/>		
+	</class>
+</hibernate-mapping>

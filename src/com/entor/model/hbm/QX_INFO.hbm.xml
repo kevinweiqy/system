@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">	
+<hibernate-mapping package="com.entor.model">
+
+     <!-- 权限信息表 -->
+	<class name="QX_INFO" table="qx_Info" >
+	
+	
+	
+	   <!-- id -->
+		<id name="id" column="id">
+<!--	配置主键的生成策略，native自增长-->
+			<generator class="native"/>
+		</id>
+		<!-- 权限 -->
+		<property name="qx_code" not-null="true"  length="30"></property>
+		<!-- 权限名 -->
+		<property name="qx_name" not-null="true"  length="30"></property>
+		<!-- 权限路径 -->
+		<property name="qx_url" not-null="false" length="50" ></property>
+		<!-- 状态  0是不再用  1是 再用-->
+		<property name="state"  length="1"></property>
+		<!-- 菜单  1 是菜单 0 不是菜单 -->
+		<property name="qx_sort" length="1"></property>
+		<property name="menu" length="1"></property>
+		<!-- 上级权限id -->
+		<many-to-one name="father" column="father_id"></many-to-one>
+		
+		
+	
+		
+		
+	</class>
+</hibernate-mapping>

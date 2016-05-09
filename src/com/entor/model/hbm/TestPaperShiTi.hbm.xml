@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="com.entor.model">
+
+	<class name="TestPaperShiTi" table="testPaperShiTi" lazy="true">
+		<comment>试卷试题信息表</comment>
+		<id name="id" >
+			<generator class="native"/>
+		</id>
+		<many-to-one name="testPaper" column="testPaper_id"/>
+		<many-to-one name="shiTi"  column="shiTi_id"/>
+		
+	</class>
+	
+</hibernate-mapping>

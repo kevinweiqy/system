@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.entor.model"> 
+	<class name="TestScore" table="testScore" lazy="true">
+		<comment>考试成绩信息表</comment>
+		<id name="id" >
+			<generator class="native"/>
+		</id>
+		<many-to-one name="tp" column="testPaper_id"/>
+		<many-to-one name="stu"  column="Student_id"/>
+		<property name="score" length="10"/>
+<!--		<property name="examinationdate" />-->
+<property name="examinationdate" generated="never" not-null="true">
+    <column name="examinationdate" sql-type="timestamp" default="CURRENT_TIMESTAMP"></column>
+</property>
+		<property name="pass" length="1"/>
+		<property name="buScore" length="10"/>
+		<property name="isPass" length="1"/>
+		<property name="detail" length="20"/>
+		
+		
+		
+		
+	</class>
+</hibernate-mapping>

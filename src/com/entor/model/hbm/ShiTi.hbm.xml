@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="com.entor.model">
+	<class name="ShiTi" table="shiti" lazy="true" polymorphism="explicit">
+		<comment>试题信息表</comment>		
+		<id name="id" >
+			<generator class="native"/>
+		</id>
+		
+		<property name="shiti_code" unique="true" length="50"/>
+		<property name="neirong"  length="500"></property>
+		<property name="type"  length="2"></property>
+		
+		<joined-subclass name="Rightorwrong" table="rightorwrong">
+			<key column="rightorwrongid"/>
+			<property name="answer"/>
+			<property name="sctupdate"/>
+			<property name="teacherid"/>
+		</joined-subclass>
+		<joined-subclass name="Select" table="selects">
+			<key column="selectid"/>
+			<property name="result1"/>
+			<property name="result2"/>
+			<property name="result3"/>
+			<property name="result4"/>
+			<property name="selectType"/>
+			<property name="answer"/>
+			<property name="sctupdate"/>
+			<property name="teacherId"/>			
+		</joined-subclass>
+			
+	</class>
+	
+</hibernate-mapping>

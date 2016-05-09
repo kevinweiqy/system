@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping 
+	package="com.entor.model">
+	<class name="YH_JS" table="yh_js" lazy="true">
+
+		<comment>角色权限信息表</comment>
+		<composite-id>
+		<key-many-to-one name="admin" column="admin_id"/>
+		<key-many-to-one name="js_xx"  column="jsxx_id"/>
+		</composite-id>
+	</class>
+	
+</hibernate-mapping>

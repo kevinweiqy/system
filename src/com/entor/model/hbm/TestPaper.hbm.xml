@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.entor.model">
+	<class name="TestPaper" table="testPaper">
+	    
+		<id name="id" column="id">
+<!--	配置主键的生成策略，native自增长-->
+			<generator class="native"/>
+		</id>
+		<property name="examination_no" length="10" unique="true" not-null="true" />
+		<property name="rightorwrong_number"  length="3"/>
+		<property name="rightorwrong_score" length="2"/>
+		<property name="select_number" length="3"/>
+		<property name="select_score"  length="2"/>
+		<property name="selects_number"  length="3"/>
+		<property name="selects_score"  length="2"/>
+		<property name="setupDate" ></property>
+		<property name="beginTime" ></property>
+		<property name="endTime" ></property>
+		<property name="status" length="1"></property>
+		<many-to-one name="teacher" column="teacher_id"></many-to-one>
+		<property name="detail"  length="200"></property>
+		<property name="test_type"  length="1"></property>
+		<property name="pass_score"  length="2"></property>		
+	</class>
+</hibernate-mapping>

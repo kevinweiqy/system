@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.entor.model"> 
+	<class name="TestAnser" table="testanser" lazy="true">
+		<comment>考试答案信息表</comment>
+		<id name="id" >
+			<generator class="native"/>
+		</id>
+		<many-to-one name="student" column="student_id"/>
+		<many-to-one name="testPaper"  column="testPaper_id"/>
+		<many-to-one name="select"  column="select_id"/>
+		<many-to-one name="rightorwrong"  column="rightorwrong_id"/>
+		<property name="ssAnswer" length="15"/>
+		<property name="SelectAnswer" />
+		<property name="rwAnswer" length="10"/>
+		<property name="RightorwrongAnswer" />
+
+				
+	</class>
+</hibernate-mapping>
